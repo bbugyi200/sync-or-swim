@@ -1,0 +1,29 @@
+### Tests
+pytest
+pytest-cov
+pytest-mock
+syrupy
+tox
+tox-pyenv
+-e file:.#egg=sync-or-swim>=0.dev
+
+### Lint
+black
+cogapp ~= 3.3
+flake8
+isort
+mypy != 0.920, != 0.921, != 0.930  # workaround for https://github.com/samuelcolvin/pydantic/pull/3175
+pydocstyle[toml]
+pylint
+
+### Docs
+m2r2
+sphinx ~= 4.3.1  # ATTOW, 'sphinx>=4.4.0' requires a 'importlib-metadata' version that conflicts with what 'cruft' requires.
+sphinx-rtd-theme
+sphinx-autodoc-typehints ~= 1.17.1  # since >=1.18 requires sphinx >=4.5
+
+### Misc
+bump2version
+cruft[pyproject]
+pip-tools
+setuptools_scm
