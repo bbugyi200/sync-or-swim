@@ -4,6 +4,8 @@
 #
 #    "make update-requirements"
 #
+bcrypt==4.0.0
+    # via paramiko
 bolton-clack==0.3.4
     # via -r requirements.in
 bolton-eris==0.2.3
@@ -16,16 +18,39 @@ bolton-logrus==0.1.0
     #   bolton-clack
 bolton-metaman==0.1.2
     # via
+    #   -r requirements.in
     #   bolton-eris
     #   bolton-logrus
 bolton-typist==0.2.0
     # via
     #   bolton-clack
     #   bolton-eris
+cffi==1.15.1
+    # via
+    #   cryptography
+    #   pynacl
+cryptography==38.0.1
+    # via paramiko
+fabric==2.7.1
+    # via -r requirements.in
+invoke==1.7.1
+    # via fabric
+paramiko==2.11.0
+    # via fabric
+pathlib2==2.3.7.post1
+    # via fabric
+pycparser==2.21
+    # via cffi
 pydantic==1.10.2
     # via bolton-clack
+pynacl==1.5.0
+    # via paramiko
 pyyaml==6.0
     # via bolton-clack
+six==1.16.0
+    # via
+    #   paramiko
+    #   pathlib2
 structlog==22.1.0
     # via bolton-logrus
 typing-extensions==4.3.0
