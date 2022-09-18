@@ -18,7 +18,7 @@ class Config(clack.Config):
     command: Command
 
     # ----- ARGUMENTS
-    remote_target_name: str
+    remote_host_name: str
 
     # ----- CONFIG
     hosts: List[Host]
@@ -53,7 +53,7 @@ def clack_parser(argv: Sequence[str]) -> dict[str, Any]:
         push_or_pull: Final = "pull" if config_class is PullConfig else "push"
         to_or_from: Final = "from" if config_class is PullConfig else "to"
         subparser.add_argument(
-            "remote_target_name",
+            "remote_host_name",
             help=(
                 "The name of the remote machine (which MUST be configured in"
                 f" sync_or_swim/config.yml) that we will {push_or_pull} files"

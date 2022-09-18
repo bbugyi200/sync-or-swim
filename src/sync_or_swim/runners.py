@@ -31,7 +31,7 @@ def run_pull(cfg: PullConfig) -> int:
     for target in cfg.targets:
         local = target.paths["local"]
         for host_name, remote in target.paths.items():
-            if host_name == cfg.remote_target_name:
+            if host_name == cfg.remote_host_name:
                 logger.info(
                     "Fetching file from remote host.",
                     host=host,
@@ -72,7 +72,7 @@ def _logging_host_from_config(cfg: Config) -> Optional[Host]:
             " configureation.",
             error=e.to_json(),
             all_hosts=cfg.hosts,
-            target_name=cfg.remote_target_name,
+            target_name=cfg.remote_host_name,
         )
         return None
     host = host_result.ok()
@@ -80,7 +80,7 @@ def _logging_host_from_config(cfg: Config) -> Optional[Host]:
 
 
 def _host_from_config(cfg: Config) -> ErisResult[Host]:
-    host_container = [h for h in cfg.hosts if h.name == cfg.remote_target_name]
+    host_container = [h for h in cfg.hosts if h.name == cfg.remote_host_name]
     if not host_container:
         error = ErisError(
             "Given target name was not found in 'hosts' values of"
