@@ -150,8 +150,11 @@ packaging==21.3
     #   setuptools-scm
     #   sphinx
     #   tox
-paramiko==2.11.0
-    # via fabric
+paramiko==2.7.2
+    # via
+    #   -r requirements.in
+    #   fabric
+    #   sync-or-swim
 pathlib2==2.3.7.post1
     # via fabric
 pathspec==0.10.1
@@ -219,7 +222,6 @@ setuptools-scm==7.0.5
     # via -r requirements-dev.in
 six==1.16.0
     # via
-    #   paramiko
     #   pathlib2
     #   python-dateutil
     #   tox
