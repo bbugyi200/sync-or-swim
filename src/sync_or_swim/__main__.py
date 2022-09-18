@@ -2,31 +2,13 @@
 
 from __future__ import annotations
 
-from typing import Sequence
-
 import clack
 
-
-class Config(clack.Config):
-    """Command-line arguments."""
-
-    @classmethod
-    def from_cli_args(cls, argv: Sequence[str]) -> Config:
-        """Parses command-line arguments."""
-        parser = clack.Parser()
-
-        args = parser.parse_args(argv[1:])
-        kwargs = clack.filter_cli_args(args)
-
-        return cls(**kwargs)
+from . import APP_NAME
+from .config import clack_parser
+from .runners import RUNNERS
 
 
-def run(cfg: Config) -> int:
-    """This function acts as this tool's main entry point."""
-    del cfg
-    return 0
-
-
-main = clack.main_factory("sync_or_swim", run)
+main = clack.main_factory(APP_NAME, runners=RUNNERS, parser=clack_parser)
 if __name__ == "__main__":
     main()
