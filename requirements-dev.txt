@@ -27,7 +27,10 @@ bolton-clack==0.3.4
     #   -r requirements.in
     #   sync-or-swim
 bolton-eris==0.2.3
-    # via bolton-clack
+    # via
+    #   -r requirements.in
+    #   bolton-clack
+    #   sync-or-swim
 bolton-ion==0.1.0
     # via bolton-eris
 bolton-logrus==0.1.0

@@ -9,7 +9,9 @@ bcrypt==4.0.0
 bolton-clack==0.3.4
     # via -r requirements.in
 bolton-eris==0.2.3
-    # via bolton-clack
+    # via
+    #   -r requirements.in
+    #   bolton-clack
 bolton-ion==0.1.0
     # via bolton-eris
 bolton-logrus==0.1.0
