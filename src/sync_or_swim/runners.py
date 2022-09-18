@@ -59,7 +59,12 @@ def run_push(cfg: PushConfig) -> int:
 
 
 def _connection_from_host(host: Host) -> Connection:
-    c = Connection(host.address, user=host.user, port=host.port)
+    c = Connection(
+        host.address,
+        user=host.user,
+        port=host.port,
+        connect_kwargs=host.connect_kwargs or {},
+    )
     return c
 
 
@@ -72,7 +77,7 @@ def _logging_host_from_config(cfg: Config) -> Optional[Host]:
             " configureation.",
             error=e.to_json(),
             all_hosts=cfg.hosts,
-            target_name=cfg.remote_host_name,
+            remote_host_name=cfg.remote_host_name,
         )
         return None
     host = host_result.ok()

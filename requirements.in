@@ -3,3 +3,4 @@ bolton-eris ~= 0.2.3
 bolton-logrus ~= 0.1.0
 bolton-metaman ~= 0.1.2
 fabric ~= 2.7
+paramiko == 2.7.2  # HACK: see https://github.com/fabric/fabric/issues/2182#issuecomment-1045614948

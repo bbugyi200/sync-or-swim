@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Dict, Optional
+from typing import Any, Dict, Optional
 
 from pydantic import BaseModel
 
@@ -14,6 +14,7 @@ class Host(BaseModel):
     address: str
     port: Optional[int] = None
     user: Optional[str] = None
+    connect_kwargs: Optional[Dict[str, Any]] = None
 
 
 class Target(BaseModel):
